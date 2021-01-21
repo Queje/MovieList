@@ -87,7 +87,7 @@ function popup(i) {
     const datepopup = document.getElementById(`datepop${i}`)
     datepopup.innerHTML = Movielist.Search[i].Year
 
-    let OMDbAPIID = "https://www.omdbapi.com/?apikey=bb9280f&i="+Movielist.Search[i].imdbID
+    let OMDbAPIID = "http://www.omdbapi.com/?apikey=bb9280f&i="+Movielist.Search[i].imdbID
 
     fetch(OMDbAPIID, {
         method: "GET"
