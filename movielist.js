@@ -87,7 +87,7 @@ function popup(i) {
     const datepopup = document.getElementById(`datepop${i}`)
     datepopup.innerHTML = Movielist.Search[i].Year
 
-    let OMDbAPIID = "http://www.omdbapi.com/?apikey=bb9280f&i="+Movielist.Search[i].imdbID
+    let OMDbAPIID = "https://www.omdbapi.com/?apikey=bb9280f&i="+Movielist.Search[i].imdbID
 
     fetch(OMDbAPIID, {
         method: "GET"
@@ -125,12 +125,12 @@ searchButton.addEventListener('click', (e) => {
 let options = {
     root: null, // relative to document viewport 
     rootMargin: '0px', // margin around root. Values are similar to css property. Unitless values not allowed
-    threshold: 1.0 // visible amount of item shown in relation to root
+    threshold: 0.5 // visible amount of item shown in relation to root
 };
 
 function onChange(changes, observer) {
     changes.forEach(change => {
-        if (change.intersectionRatio > 0) {
+        if (change.intersectionRatio > 0.5) {
             // your observer logic
         }
     });
